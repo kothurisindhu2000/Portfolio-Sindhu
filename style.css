@@ -763,3 +763,102 @@ footer {
     height: 100px;
   }
 }
+/* ========================================================= FLEXIBLE DEVICE RESPONSIVENESS ========================================================= */
+
+/* General adjustments for tablets and phones */
+@media (max-width: 1024px) {
+  section {
+    padding: 1.5rem;
+  }
+  header {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+  .header-content {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  .profile-pic {
+    width: 150px;
+    margin-right: 10px;
+  }
+}
+
+/* Project images */
+@media (max-width: 768px) {
+  .project-images img,
+  .project1-img {
+    width: 90% !important;
+    height: auto !important;
+    margin: 1rem auto;
+  }
+}
+
+/* About card */
+@media (max-width: 768px) {
+  .about-card {
+    min-width: auto !important;
+    max-width: 95% !important;
+    padding: 1.5rem;
+  }
+}
+
+/* Education cards */
+@media (max-width: 768px) {
+  .education-card {
+    max-width: 95% !important;
+    min-width: auto !important;
+    padding: 1.2rem;
+  }
+  .education-card img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Certification cards */
+@media (max-width: 768px) {
+  .cert-card {
+    flex: 1 1 100% !important;
+    max-width: 95%;
+    padding: 1rem;
+  }
+  .cert-card img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Contact cards */
+@media (max-width: 768px) {
+  #contact .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #contact .contact-card {
+    width: 80% !important;
+    height: auto !important;
+  }
+}
+
+/* Experience section */
+@media (max-width: 768px) {
+  .text-image-row,
+  .experience-gallery {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .experience-image img {
+    width: 90% !important;
+    height: auto !important;
+  }
+}
+
+/* Footer text adjustment */
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
