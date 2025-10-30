@@ -1,3 +1,4 @@
+/* ========================================================= GLOBAL STYLES – Default resets and global font setup ========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +12,41 @@ body {
   line-height: 1.9;
 }
 
+section {
+  padding: 2rem;
+  max-width: 1250px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ========================================================= SECTION HEADINGS – Uniform style for all sections ========================================================= */
+section h2 {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: #263b03;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Optional: make section titles responsive for smaller screens */
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================================= HEADER SECTION ========================================================= */
 header {
-  background-image: url('img/image.jpeg');
+  background-image: url('Image/Sindhu.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: rgb(221, 200, 200);
+  color: rgb(198, 172, 172);
   padding: 6rem 1rem;
   text-align: center;
   position: relative;
@@ -24,28 +54,6 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-}
-
-.Resume-link {
-    color: rgb(255, 251, 251);  /* Light color for resume link */
-    text-decoration: none;      /* Remove underline */
-    font-weight: 500;
-}
-
-.Resume-link:hover {
-    color: #ffd700;  /* Slightly lighter on hover */
-    text-decoration: underline;
-}
-
-.email-link {
-    color: white;               /* White color for email link */
-    text-decoration: none;      /* Remove underline */
-    font-weight: 500;
-}
-
-.email-link:hover {
-    color: #ffd700;             /* Gold color on hover */
-    text-decoration: underline; /* Underline on hover */
 }
 
 .header-overlay {
@@ -78,17 +86,18 @@ header {
   margin-right: 20px;
 }
 
+/* ========================================================= NAVIGATION BAR ========================================================= */
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  background: #222;
+  background: #2e0202;
   padding: 1rem;
 }
 
 nav a {
-  color: white;
+  color: rgb(250, 187, 187);
   text-decoration: none;
   font-weight: bold;
 }
@@ -97,72 +106,660 @@ nav a:hover {
   text-decoration: underline;
 }
 
-section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+/* ========================================================= CONTACT LINKS ========================================================= */
+.contact-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 1900;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.card {
-  background: #cec4b0;
-  border-left: 6px solid #000000;
+.contact-link:hover {
+  color: #e87007;
+  background-color: rgba(5, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(232, 229, 229, 0.2);
+}
+
+/* ========================================================= ABOUT CARD – separate ========================================================= */
+.about-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #012628;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-card {
+  background-color: #f8f1d6;
+  border-radius: 12px;
+  border: 4px solid #090a0a;
+  max-width: 1500px;
+  min-width: 1400px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  border-color: #161201;
+  background-color: #f8efef;
+}
+
+.about-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #004d40;
+  line-height: 1.7;
+}
+
+.about-card h3 {
+  margin-bottom: 1rem;
+  color: #006064;
+}
+
+/* ========================================================= PROJECT CARDS – fully separate ========================================================= */
+/* Center the PROJECT CARDS themselves — not the text */
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers cards horizontally */
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Individual project cards styling */
+.project-card {
+  background-color: #f5f0e6;
+  border: 4px solid #311501;   /* same border for all */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1800px;
+  min-height: 350px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0 auto 3rem auto;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  border-color: #ffd700;
+  background-color: #fff8e1;
+}
+
+/* Project images container */
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+#project1 img {
+  max-height: 100px;   /* limits height */
+  width: 100%;
+  object-fit: cover;   /* crops excess without stretching */
+}
+
+/* Images styling */
+.project-images img {
+  max-width: 900px;   /* limit width */
+  max-height: 150px;  /* limit height */
+  height: 200px;      /* uniform height */
+  width: auto;         /* keep aspect ratio */
+  object-fit: cover;   /* crop if necessary */
+  border-radius: 8px;
+  border: 2px solid #8b4513;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.project1-img {
+  display: block;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 450px;   /* controls width */
+  max-height: 250px;  /* controls height */
+  object-fit: cover;  /* crop nicely */
+  border-radius: 8px;
+  border: 2px solid #8b4513;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project1-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border-color: #ffd700;
+}
+
+
+/* Hover effect on images */
+.project-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  border-color: #ffd700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .project-images img {
+    width: 150px !important;
+    height: 120px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-images img {
+    width: 45% !important; /* two images per row */
+    height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-images img {
+    width: 90% !important; /* single image per row */
+    height: auto !important;
+  }
+}
+/* The overlay background */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* The enlarged image */
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay img:hover {
+  transform: scale(1.05);
+  cursor: zoom-out;
+}
+
+/* ========================================================= EXPERIENCE SECTION – Text + Single Image Side by Side  ========================================================= */
+#experience {
+  padding: 3rem 1.5rem;
+  background: #ecd3bb;
+  border-radius: 60px;
+}
+
+#experience h2 {
+  color: #006064;
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Container for all experience cards */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Single experience card styling */
+.experience-card {
+  background: #ffffff;
+  border-radius: 19px;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Row for text + image */
+.text-image-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+/* Text part */
+.experience-text {
+  flex: 1 1 500px; /* grows/shrinks */
+}
+
+/* Image part */
+.experience-image {
+  flex: 0 0 400px; /* fixed width for image */
+}
+
+.experience-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-image {
+    flex: 1 1 100%;
+  }
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.experience-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.experience-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Flex container for text + image */
+.experience-gallery {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Text area */
+.experience-gallery .text-content {
+  flex: 1 1 400px;
+}
+
+/* Single image area */
+.experience-gallery img {
+  flex: 0 0 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the single text + image layout */
+.experience-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+/* Responsive: stack text above image on small screens */
+@media (max-width: 768px) {
+  .experience-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .experience-gallery img {
+    width: 90%;
+  }
+}
+
+/* =========================================================  EDUCATION SECTION STYLES  ========================================================= */
+
+/* Container for all education cards */
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Individual education cards */
+.education-card {
+  background-color: #e8d8b9;
+  border-radius: 12px;
+  border: 4px solid #520d03;
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 800px;
+  min-height: 300px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 10px rgba(15, 12, 12, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for education cards */
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  border-color: #e8bf57;
+  background-color: #dfcc8b;
+}
+
+/* Card headings */
+.education-card h3 {
+  margin-bottom: 1rem;
+  color: #4a148c;
+}
+
+/* Paragraph text inside cards */
+.education-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: #3b2f3b;
+  line-height: 1.5;
+}
+
+/* 📸 Image styles inside each education card */
+.education-card img {
+  width: 95%;
+  max-height: 200px;        /* Keeps image from being too tall */
+  object-fit: cover;        /* Crops and fills area neatly */
+  border-radius: 8px;       /* Matches card’s rounded edges */
+  margin: 0.8rem 0;         /* Adds space above and below */
+  display: block;           /* Prevents inline gaps */
+}
+
+/* Optional: separate image gallery container */
+.education-gallery {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Unique border colors for each card */
+#edu-card-1 { border-color: #280602; }
+#edu-card-2 { border-color: #3a0303; }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .education-card {
+    max-width: 90%;
+    padding: 1.2rem;
+  }
+
+  .education-card img {
+    max-height: 100px;
+  }
+}
+/* ========================================================= EDUCATION SECTION – Image Hover Effect = */
+.education-gallery img,
+.education-card img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-gallery img:hover,
+.education-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+/* ========================================================= CERTIFICATIONS & TRAININGS CARDS – side by side ========================================================= */
+.cert-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.cert-card {
+  flex: 1 1 45%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 96, 100, 0.25);
+}
+
+.cert-card h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #070707;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #00acc1;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.cert-card h4 {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.cert-card p {
+  font-size: 0.95rem;
+  color: #000700;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.cert-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #080000;
+}
+
+.cert-card ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .cert-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cert-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========================================================= CONTACT CARDS – separate ========================================================= */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.contact-card {
+  background: #ece0e0;
+  border-left: 6px solid #4a148c;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 8px;
+  border-radius: 60px;
+  cursor: pointer;
+  flex: 1 1 300px;
+  min-width: 350px;
+  max-width: 700px;
+  min-height: 350px;
+  transition: all 0.3s ease;
 }
 
-h1, h2, h3 {
-  margin-bottom: 0.5rem;
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border-left-color: #ba68c8;
+  background-color: #ede7f6;
 }
 
+.contact-card ul, .contact-card p {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+/* === Training / Workshop Images === */
+.cert-card img {
+  display: block;
+  max-width: 250px;       /* set reasonable width */
+  max-height: 180px;      /* limit height */
+  width: auto;
+  height: auto;
+  margin: 1rem auto;      /* centers the image horizontally with space around */
+  border-radius: 19px;
+  border: 2px solid #8b4513;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect like project images */
+.cert-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border-color: #ffd700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cert-card img {
+    max-width: 90%;
+    max-height: auto;
+  }
+}
+/* ========================================================= FOOTER ========================================================= */
 footer {
   text-align: center;
   padding: 1rem;
   background: #383838;
-  color: #eeecec;
-  margin-top: 2rem;
+  color: rgb(221, 200, 200);
 }
 
-/* ✅ Mobile Responsive Styles */
-@media screen and (max-width: 768px) {
-  header {
+/* ========================================================= 📜 RESUME LINK STYLE ========================================================= */
+.Resume-link {
+  color: rgb(255, 251, 251);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.Resume-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+/* ========================================================= 💌 CONTACT SECTION – Perfectly Sized Compact Cards ========================================================= */
+/* ---------------- CONTACT SECTION ---------------- */
+#contact {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #f9f9f9;
+}
+
+#contact h2 {
+  color: #006064;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contact cards container – inline layout */
+#contact .contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap; /* ensures cards stay in one row */
+}
+
+/* Individual contact cards */
+#contact .contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;  /* slightly smaller padding */
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 96, 100, 0.15);
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  max-width: 300px;
+  height: auto !important;      /* force auto height */
+  min-height: unset !important; /* remove min-height restriction */
+  text-align: center;
+  word-break: break-word;
+}
+
+
+/* Card links */
+#contact .contact-card a {
+  text-decoration: none;
+  color: #004d40;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* Hover effect */
+#contact .contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 96, 100, 0.25);
+}
+
+/* Gradient backgrounds */
+#contact .email-card {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  border: 2px solid #80deea;
+}
+#contact .linkedin-card {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border: 2px solid #90caf9;
+}
+#contact .github-card {
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
+  border: 2px solid #b39ddb;
+}
+
+/* Responsive – stack cards on small screens */
+@media (max-width: 768px) {
+  #contact .contact-container {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 1rem;
-    height: auto;
   }
-
-  .header-content {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .profile-pic {
-    width: 150px;
-    margin: 10px auto;
-    display: block;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  section {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  p {
-    font-size: 0.95rem;
+  #contact .contact-card {
+    width: 80%;
+    height: 100px;
   }
 }
