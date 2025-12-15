@@ -205,78 +205,55 @@ nav a:hover {
 }
 
 /* Project images container */
-.project-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  margin-bottom: 1rem;
-  justify-content: flex-start;
-}
-#project1 img {
-  max-height: 100px;   /* limits height */
-  width: 100%;
-  object-fit: cover;   /* crops excess without stretching */
-}
-
-/* Images styling */
-.project-images img {
-  max-width: 900px;   /* limit width */
-  max-height: 150px;  /* limit height */
-  height: 200px;      /* uniform height */
-  width: auto;         /* keep aspect ratio */
-  object-fit: cover;   /* crop if necessary */
+/* ---------------- PROJECT IMAGES ---------------- */
+.project-images img,
+.project1-img {
+  max-width: 100%;      /* expand to container width */
+  max-height: 200px;    /* increase max height */
+  height: auto;         /* maintain aspect ratio */
+  width: auto;
+  object-fit: cover;    /* crop nicely without stretching */
   border-radius: 8px;
   border: 2px solid #8b4513;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-.project1-img {
-  display: block;
-  margin: 1.5rem auto;
-  width: 100%;
-  max-width: 450px;   /* controls width */
-  max-height: 250px;  /* controls height */
-  object-fit: cover;  /* crop nicely */
-  border-radius: 8px;
-  border: 2px solid #8b4513;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
+.project-images img:hover,
 .project1-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   border-color: #ffd700;
 }
 
-
-/* Hover effect on images */
-.project-images img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  border-color: #ffd700;
-}
-
-/* Responsive adjustments */
+/* ---------------- RESPONSIVE ADJUSTMENTS ---------------- */
 @media (max-width: 1024px) {
-  .project-images img {
-    width: 150px !important;
-    height: 120px !important;
+  .project-images img,
+  .project1-img {
+    max-width: 90%;
+    max-height: 400px;
+    margin: 1rem auto;
   }
 }
 
 @media (max-width: 768px) {
-  .project-images img {
-    width: 45% !important; /* two images per row */
-    height: auto !important;
+  .project-images img,
+  .project1-img {
+    max-width: 95%;
+    max-height: 300px;
+    margin: 1rem auto;
   }
 }
 
 @media (max-width: 480px) {
-  .project-images img {
-    width: 90% !important; /* single image per row */
-    height: auto !important;
+  .project-images img,
+  .project1-img {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 1rem auto;
   }
 }
+
 /* The overlay background */
 .lightbox-overlay {
   position: fixed;
@@ -489,7 +466,7 @@ nav a:hover {
 
 /* 📸 Image styles inside each education card */
 .education-card img {
-  width: 95%;
+  width: 90%;
   max-height: 200px;        /* Keeps image from being too tall */
   object-fit: cover;        /* Crops and fills area neatly */
   border-radius: 8px;       /* Matches card’s rounded edges */
