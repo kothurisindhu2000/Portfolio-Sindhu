@@ -545,6 +545,7 @@ h3 {
   flex-wrap: wrap;
   gap: 1.25rem;
   justify-content: center;
+  font-weight: 1000;
 }
 
 .contact-card {
