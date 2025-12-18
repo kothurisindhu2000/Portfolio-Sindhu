@@ -2,290 +2,341 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SINDHU KOTHURI | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Global font-family is defined in :root/body in style.css:
+       "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- 🌟 HEADER SECTION -->
-  <header>
-    <div class="header-overlay"></div>
-    <div class="header-content">
-      <h1>SINDHU KOTHURI</h1>
-      <p>Software Engineer & Data Analyst | Building Scalable, Data-Driven Solutions</p>
-      <p>Python, SQL, ETL, Cloud (AWS & GCP)</p>
-      <p>
-        <a href="mailto:sindhukothuri10@gmail.com" class="contact-link">kothurisindhu2010@gmail.com</a> |
-        <a href="https://linkedin.com/in/sindhukothuri" target="_blank" class="contact-link">LinkedIn</a> |
-        <a href="https://github.com/kothurisindhu2000" target="_blank" class="contact-link">GitHub</a>
-      </p>
+  <!-- ====== TOP BAR (NAME + LINKS) ====== -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Sindhu Kothuri</span>
+      </div>
+
+      <nav class="top-links">
+        <a href="mailto:kothurisindhu2010@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/sindhukothuri" target="_blank">LinkedIn</a>
+        <a href="https://github.com/kothurisindhu2000" target="_blank">GitHub</a>
+      </nav>
     </div>
   </header>
 
-  <!-- 🧭 NAVIGATION BAR -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- ====== MAIN HERO (ABOUT) ====== -->
+  <main>
+    <section id="about" class="hero">
+      <div class="hero-inner">
+        <!-- LEFT: heading + image + nav -->
+        <div class="hero-left">
+          
 
-  <!-- 👩‍💼 ABOUT SECTION -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-card">
-        <p>
-          I am a Data Analyst and Software Engineer with a Master’s in Information Systems from Central Michigan University,
-          passionate about building scalable, data-driven solutions that improve efficiency and support business intelligence.
-          At Capgemini, I worked as a Software Engineer Analyst, contributing to the design and optimization of end-to-end
-          software systems while leveraging Python, SQL, and data engineering best practices to enhance performance and reliability.
-        </p>
-        <p>
-          My experience spans data analytics, ETL development, and cloud technologies (AWS, GCP), with a strong focus on
-          transforming data into actionable insights that inform strategic decisions. I enjoy working at the intersection of
-          data, technology, and business—delivering solutions that bridge technical precision with measurable impact.
-        </p>
-        <p>
-          Curious by nature and driven by growth, I stay current with emerging tools, frameworks, and analytics trends.
-          I’m motivated by opportunities that challenge me to innovate, collaborate, and create technology that drives
-          meaningful business outcomes.
-        </p>
-      </div>
-    </div>
-  </section>
+          <div class="hero-photo-card">
+            <img
+              src="education images/Screenshot 2025-10-27 at 11.18.19 AM.png"
+              alt="Sindhu Kothuri portrait"
+            />
+          </div>
 
-  <!-- 📊 PROJECTS SECTION -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
-
-      <!-- Project Card 1 -->
-      <div class="project-card">
-        <h3>ConnectCraft: Personalized LinkedIn Message Generator</h3>
-        <p>
-          <strong>Check it out:</strong>
-          <a href="https://kothurisindhu2000.github.io/ConnectCraft-Build-Meaningful-Connections/" target="_blank">
-            Live Demo
-          </a>
-        </p>
-        <p class="project-overview">
-          Built a React + TypeScript app that generates personalized LinkedIn messages with tone control,
-          character limits, and real-time previews, improving efficiency and authenticity in professional outreach.
-        </p>
-        <ul class="project-highlights">
-          <li>Developed using React, TypeScript, and Vite.</li>
-          <li>Features real-time message preview and tone customization.</li>
-          <li>Deployed on GitHub Pages for easy access.</li>
-        </ul>
-        <div class="project-images">
-          <img src="ConnectCraft Images/Image 1.png" alt="ConnectCraft Interface Screenshot 1" class="lightbox-img">
-          <img src="ConnectCraft Images/Image 2.png" alt="ConnectCraft Interface Screenshot 2" class="lightbox-img">
-          <img src="ConnectCraft Images/Image 3.png" alt="ConnectCraft Interface Screenshot 3" class="lightbox-img">
-          <img src="ConnectCraft Images/Image 4.png" alt="ConnectCraft Interface Screenshot 4" class="lightbox-img">
+          <!-- nav directly under photo -->
+          <nav class="section-nav">
+            <a href="#projects">Projects</a>
+            <a href="#workshops">Workshops</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
+
+        <!-- RIGHT: about text -->
+        <article class="hero-about">
+          <h1 class="hero-greeting">Hello, I’m Sindhu 👋🏻</h1>
+
+          <p>
+            I’m a Software Engineer focused on transforming complex problems into reliable, data-driven solutions.
+          </p>
+
+          <p>
+            I work with Python, SQL, and modern data pipelines to build efficient systems,
+            automate analytics, and enable faster decision-making across AWS and GCP
+          </p>
+
+          <p>
+            I take ownership end to end—understanding requirements, engineering clean solutions, and delivering tools that are intuitive, scalable, and easy to trust.
+          </p>
+        </article>
       </div>
+    </section>
 
-      <!-- Project Card 2 -->
-      <div class="project-card">
-        <h3>Tata Data Visualisation: Empowering Business with Effective Insights</h3>
-        <p class="project-overview">
-          Executed a data visualization project on 2011 retail sales to deliver executive-ready insights on
-          revenue performance, market opportunities, and customer value using Tableau.
-        </p>
-        <ul class="project-highlights">
-          <li>Cleaned and transformed transactional data, engineering revenue as the core business metric.</li>
-          <li>Designed dashboards for monthly revenue trends, top markets/products, and high-value customers.</li>
-          <li>Built a global demand view to surface high-potential regions for strategic expansion.</li>
-        </ul>
-        <img
-          class="project1-img lightbox-img"
-          src="Tableau retai image/Screenshot 2025-10-24 at 1.16.48 PM.png"
-          alt="Tata Retail Sales Tableau Dashboard"
-        >
+    <!-- ========================= PROJECTS ========================= -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-header">
+            <h3>ConnectCraft: Personalized LinkedIn Message Generator</h3>
+            <a
+              href="https://kothurisindhu2000.github.io/ConnectCraft-Build-Meaningful-Connections/"
+              target="_blank"
+              class="project-link"
+            >
+              Live Demo
+            </a>
+          </div>
+          <p class="project-overview">
+            React + TypeScript web app that generates personalized LinkedIn messages
+            with tone control, character limits, and real time previews to improve
+            outreach efficiency and authenticity.
+          </p>
+          <ul class="project-highlights">
+            <li>Built with React, TypeScript, and Vite.</li>
+            <li>Real time message preview and tone customization.</li>
+            <li>Deployed on GitHub Pages for easy access.</li>
+          </ul>
+          <div class="project-images">
+            <img
+              src="ConnectCraft Images/Image 1.png"
+              alt="ConnectCraft Interface 1"
+              class="lightbox-img"
+            />
+            <img
+              src="ConnectCraft Images/Image 2.png"
+              alt="ConnectCraft Interface 2"
+              class="lightbox-img"
+            />
+            <img
+              src="ConnectCraft Images/Image 3.png"
+              alt="ConnectCraft Interface 3"
+              class="lightbox-img"
+            />
+            <img
+              src="ConnectCraft Images/Image 4.png"
+              alt="ConnectCraft Interface 4"
+              class="lightbox-img"
+            />
+          </div>
+        </article>
+
+        <!-- Project 2 (Tableau) – side‑by‑side layout -->
+        <article class="project-card project-card--tableau">
+          <div class="project-header">
+            <h3>
+              Tata Data Visualisation: Empowering Business with Effective Insights
+            </h3>
+          </div>
+
+          <div class="project-tableau-layout">
+            <!-- left: text -->
+            <div class="project-tableau-text">
+              <p class="project-overview">
+                Tableau project on 2011 retail sales to deliver executive ready
+                insights on revenue performance, market opportunities, and customer
+                value.
+              </p>
+              <ul class="project-highlights">
+                <li>
+                  Cleaned and transformed transactional data, engineering revenue as
+                  the core business metric.
+                </li>
+                <li>
+                  Built dashboards for monthly revenue trends, top markets/products,
+                  and high value customers.
+                </li>
+                <li>
+                  Created a global demand view to surface high potential regions for
+                  strategic expansion.
+                </li>
+              </ul>
+            </div>
+
+            <!-- right: image -->
+            <div class="project-tableau-image">
+              <div class="project-images single-image">
+                <img
+                  src="Tableau retai image/Screenshot 2025-10-24 at 1.16.48 PM.png"
+                  alt="Tata Retail Sales Tableau Dashboard"
+                  class="project1-img lightbox-img"
+                />
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Vehicle Service &amp; Inventory Management – Web Application</h3>
+          </div>
+          <p class="project-overview">
+            Desktop application to streamline vehicle service operations and parts
+            inventory tracking.
+          </p>
+          <ul class="project-highlights">
+            <li>Role based dashboards for technicians, managers, and admins.</li>
+            <li>Automated service scheduling, job assignment, and status tracking.</li>
+            <li>Inventory module with low stock alerts and restock notifications.</li>
+            <li>Validated functionality through manual and regression testing.</li>
+          </ul>
+          <div class="project-images">
+            <img
+              src="Vehicle images/image copy.jpeg"
+              class="lightbox-img"
+              alt="Vehicle service dashboard 1"
+            />
+            <img
+              src="Vehicle images/image-2.jpeg"
+              class="lightbox-img"
+              alt="Vehicle service dashboard 2"
+            />
+            <img
+              src="Vehicle images/image-3.jpeg"
+              class="lightbox-img"
+              alt="Vehicle service dashboard 3"
+            />
+            <img
+              src="Vehicle images/image-4.jpeg"
+              class="lightbox-img"
+              alt="Vehicle service workflow"
+            />
+            <img
+              src="Vehicle images/image-5.jpeg"
+              class="lightbox-img"
+              alt="Inventory management screen"
+            />
+          </div>
+        </article>
       </div>
+    </section>
 
-      <!-- Project Card 3 -->
-      <div class="project-card">
-        <h3>Vehicle Service & Inventory Management – Web Application</h3>
-        <p class="project-overview">
-          Built a desktop application to streamline vehicle service operations and parts inventory tracking.
-        </p>
-        <ul class="project-highlights">
-          <li>Implemented role-based dashboards for technicians, managers, and admins.</li>
-          <li>Automated service scheduling, job assignment, and status tracking.</li>
-          <li>Designed an inventory module with low-stock alerts and restock notifications.</li>
-          <li>Validated functionality through manual and regression testing to ensure reliability.</li>
-        </ul>
-        <div class="project-images">
-          <img src="Vehicle images/image copy.jpeg" class="lightbox-img" alt="Vehicle service dashboard 1">
-          <img src="Vehicle images/image-2.jpeg" class="lightbox-img" alt="Vehicle service dashboard 2">
-          <img src="Vehicle images/image-3.jpeg" class="lightbox-img" alt="Vehicle service dashboard 3">
-          <img src="Vehicle images/image-4.jpeg" class="lightbox-img" alt="Vehicle service workflow">
-          <img src="Vehicle images/image-5.jpeg" class="lightbox-img" alt="Inventory management screen">
-        </div>
-      </div>
+    <!-- ========================= WORKSHOPS ========================= -->
+    <section id="workshops" class="section">
+      <h2>Workshops</h2>
 
-    </div>
-  </section>
+      <div class="workshop-layout">
+        <!-- Workshop 1 -->
+        <article class="workshop-item">
+          <div class="workshop-header">
+            <h3>Power BI Hands on Workshop — Datacense</h3>
+            <span class="workshop-badge">Power BI</span>
+          </div>
 
-  <!-- 💼 EXPERIENCE SECTION -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience-container">
-      <div class="experience-card">
-        <div class="text-image-row">
-          <div class="experience-text">
-            <h3>Software Engineer Analyst - Capgemini [Sep 2022 – Aug 2023]</h3>
+          <div class="workshop-body">
+            <p>
+              Gained practical experience in building interactive dashboards and
+              understanding Power BI’s core capabilities.
+            </p>
+            <p class="workshop-label">Key learnings</p>
             <ul>
-              <li>Developed and deployed a Python-based banking console system on Linux, providing secure role-based access and end-to-end account lifecycle management.</li>
-              <li>Optimized real-time transaction processing with Python and MySQL, achieving a 30% backend performance improvement.</li>
-              <li>Built modular components for transaction management and audit histories, ensuring data integrity via JSON-based persistent storage.</li>
-              <li>Automated reporting workflows and dashboards, enhancing reporting accuracy and enabling faster data-driven decisions.</li>
-              <li>Collaborated cross-functionally to implement authentication protocols, secure access controls, and compliance-ready solutions.</li>
+              <li>Data integration and preparation using Excel datasets.</li>
+              <li>Advanced visualization and storytelling techniques.</li>
+              <li>Interactive dashboard design with dynamic filters.</li>
+              <li>Real time data refresh and publishing.</li>
+              <li>Collaboration and secure sharing across teams.</li>
             </ul>
           </div>
-          <div class="experience-image">
-            <img src="Bank images/Screenshot 2025-10-17 at 9.28.00 AM.png" class="lightbox-img" alt="Capgemini Project Screenshot">
+
+          <div class="workshop-image">
+            <img
+              src="Workshop images/tempImageljG2Lm.jpg"
+              class="lightbox-img"
+              alt="Power BI Workshop dashboard"
+            />
           </div>
+        </article>
+
+        <!-- Workshop 2 -->
+        <article class="workshop-item">
+          <div class="workshop-header">
+            <h3>Healthcare Awareness Analytics Dashboard — Tableau</h3>
+            <span class="workshop-badge">Tableau</span>
+          </div>
+
+          <div class="workshop-body">
+            <p>
+              Developed an interactive Tableau dashboard to analyze nutrition and
+              food allergy data, enabling users to assess dietary options and track
+              key nutritional metrics.
+            </p>
+            <ul>
+              <li>
+                Designed visualizations for macronutrient breakdowns (carbs,
+                proteins, fats, fiber, energy).
+              </li>
+              <li>Compared vegetarian vs non vegetarian food categories.</li>
+              <li>Integrated ingredient level transparency and allergen tracking.</li>
+              <li>Transformed raw datasets into actionable insights and KPIs.</li>
+              <li>
+                Promoted healthcare awareness through data driven storytelling.
+              </li>
+            </ul>
+          </div>
+
+          <div class="workshop-image">
+            <img
+              src="Workshop images/tempImageLFibYg.jpg"
+              class="lightbox-img"
+              alt="Healthcare Tableau dashboard"
+            />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================= CONTACT ========================= -->
+    <section id="contact" class="section">
+      <h2>Get in touch</h2>
+      <p class="contact-intro">
+        Open to software engineering and data roles, freelance projects, and
+        collaborations.
+      </p>
+
+      <div class="contact-container">
+        <div class="contact-card email-card">
+          <a href="mailto:kothurisindhu2010@gmail.com">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">kothurisindhu2010@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="contact-card linkedin-card">
+          <a
+            href="https://linkedin.com/in/sindhukothuri"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/sindhukothuri</span>
+          </a>
+        </div>
+
+        <div class="contact-card github-card">
+          <a
+            href="https://github.com/kothurisindhu2000"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/kothurisindhu2000</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 💼 EDUCATION SECTION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-container">
-      <div class="education-card" id="edu-card-1">
-      <h3>Central Michigan University - Master’s in Business Data Analytics & Enterprise Systems</h3>
-      <p>During my master’s in Business Data Analytics and Enterprise Systems, I gained hands-on experience in data visualization, statistical modeling, and process optimization, including an SAP ERP Simulation that enhanced my understanding of integrated business operations. As a Team Lead at The Eatery, I further developed leadership, communication, and problem-solving skills through managing teams and coordinating daily operations. </p>
-        <div class="education-gallery">
-          <img src="education images/Screenshot 2025-10-27 at 11.18.19 AM.png" alt="">
-        </div>
-      </div>
-
-  <!-- 🧾 CERTIFICATIONS SECTION -->
-  <!-- 🧾 CERTIFICATIONS SECTION -->
-  <section id="certifications">
-    <h2>Certifications & Workshops</h2>
-    <div class="cert-container">
-      <div class="cert-card" id="cert-card-1">
-        <h3>Certifications</h3>
-        <ul>
-          <div>
-  <ul style="list-style-type:none; padding:0;">
-    <li style="margin-bottom:15px;">
-      <a href="https://drive.google.com/file/d/1mIwl6MS6NwiHs0W7ogL4RubSeASBOrX_/view?usp=share_link" target="_blank">
-        <img src="certifications/six sigma white belt.pdf" alt="Six Sigma White Belt" style="width:100px; height:auto; margin-left:15px;">
-        Six Sigma White Belt - August 14, 2025 (CSSC)
-      </a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <a href="https://www.credly.com/badges/7481a7e9-a881-4a7d-9013-1a7d6959897a/linked_in_profile" target="_blank">
-        <img src="certifications/Data Analytics Essentials- cisco.pdf" alt="Data Analytics Essentials" style="width:100px; height:auto; margin-left:15px;">
-        Data Analytics Essentials - July 31, 2025 (Cisco)
-      </a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/32A6DqtsbF7LbKdcq/NkaC7knWtjSbi6aYv_32A6DqtsbF7LbKdcq_KnWM7DW8jmBQptTWD_1752553416661_completion_certificate.pdf" target="_blank">
-        <img src="certifications/Data Analytics Job Simulation.pdf" alt="Quantium Simulation" style="width:100px; height:auto; margin-left:15px;">
-        Quantium - Data Analytics Job Simulation - July 15, 2025 (Forage)
-      </a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <a href="https://www.udemy.com/certificate/UC-f59c9877-82f2-435f-8d17-28658a872f87/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com" target="_blank">
-        <img src="certifications/Tableau.pdf" alt="Tableau Training" style="width:100px; height:auto; margin-left:15px;">
-        Tableau A-Z: Hands-On Tableau Training for Data Science - May 1, 2025 (Udemy)
-      </a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <a href="https://www.credly.com/badges/845af930-b648-47e9-bb4c-fff1828647e3/linked_in_profile" target="_blank">
-        <img src="certifications/process-mining-from-theory-to-execution.png" alt="Process Mining" style="width:100px; height:auto; margin-left:15px;">
-        Process Mining - From Theory to Execution - Oct 2023 (Celonis)
-      </a>
-    </li>
-  </ul>
-</div>
-</ul>
-      </div>
-
-      <div class="cert-card" id="cert-card-2">
-        <h3>Workshops</h3>
-        <h4>Power BI Hands-on Workshop — Datacense</h4>
-        <p>
-          Gained practical experience in building interactive dashboards and understanding
-          Power BI’s core capabilities.
-        </p>
-        <img src="Workshop images/tempImageljG2Lm.jpg" class="lightbox-img"alt="">
-        <p><strong>Key Learnings:</strong></p>
-        <ul>
-          <li>Data Integration & Preparation using Excel datasets</li>
-          <li>Advanced Visualization & Storytelling Techniques</li>
-          <li>Interactive Dashboard Design with dynamic filters</li>
-          <li>Real-Time Data Refresh & Publishing</li>
-          <li>Collaboration & Secure Sharing across teams</li>
-        </ul>
-        <h4>Healthcare Awareness Analytics Dashboard — Tableau</h4>
-        <p>
-          Developed an interactive Tableau dashboard to analyze nutrition and food-allergy data,
-          enabling users to assess dietary options and track key nutritional metrics.
-        </p>
-        <img src="Workshop images/tempImageLFibYg.jpg" class="lightbox-img"alt="">
-        <ul>
-          <li>Designed visualizations for macronutrient breakdowns (carbs, proteins, fats, fiber, energy)</li>
-          <li>Compared vegetarian vs non-vegetarian food categories</li>
-          <li>Integrated ingredient-level transparency and allergen tracking</li>
-          <li>Transformed raw datasets into actionable insights and KPIs</li>
-          <li>Promoted healthcare awareness through data-driven storytelling</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 📬 CONTACT SECTION -->
-  <section id="contact">
-    <h2>Always open to conversations!</h2>
-    <div class="contact-container">
-      <div class="contact-card email-card">
-        <a href="mailto:sindhukothuri10@gmail.com">
-          📧 sindhukothuri10@gmail.com
-        </a>
-      </div>
-      <div class="contact-card linkedin-card">
-        <a href="https://linkedin.com/in/sindhukothuri" target="_blank">
-          💼 linkedin.com/in/sindhukothuri
-        </a>
-      </div>
-      <div class="contact-card github-card">
-        <a href="https://github.com/kothurisindhu2000" target="_blank">
-          🖥️ github.com/kothurisindhu2000
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; Excited to connect and explore new opportunities 💻</p>
-  </footer>
-
+    </section>
+  </main>
+<!-- ========================= LIGHTBOX SCRIPT ========================= -->
   <script>
-    // Lightbox for all images
-    document.querySelectorAll('.lightbox-img').forEach(img => {
-      img.addEventListener('click', () => {
-        const overlay = document.createElement('div');
-        overlay.classList.add('lightbox-overlay');
-        overlay.style.display = 'flex';
+    document.querySelectorAll(".lightbox-img").forEach((img) => {
+      img.addEventListener("click", () => {
+        const overlay = document.createElement("div");
+        overlay.classList.add("lightbox-overlay");
+        overlay.style.display = "flex";
 
-        const largeImg = document.createElement('img');
+        const largeImg = document.createElement("img");
         largeImg.src = img.src;
 
         overlay.appendChild(largeImg);
-        overlay.addEventListener('click', () => overlay.remove());
+        overlay.addEventListener("click", () => overlay.remove());
 
         document.body.appendChild(overlay);
       });

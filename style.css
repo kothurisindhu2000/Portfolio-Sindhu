@@ -1,842 +1,630 @@
-/* ========================================================= GLOBAL STYLES – Default resets and global font setup ========================================================= */
+/* =========================================================
+   STEP 1: GLOBAL RESET & THEME TOKENS
+   ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
+:root {
+  --bg-body: #f4f4f5;
+  --bg-surface: #ffffff;
+
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --accent-dark: #3730a3;
+
+  --text-main: #0f172a;
+  --text-muted: #4b5563;
+
+  --border-subtle: rgba(148, 163, 184, 0.4);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --radius-card: 18px;
+  --radius-pill: 999px;
+
+  --section-max-width: 1100px;
+  --transition-fast: 0.25s ease;
+
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================================================
+   STEP 2: BODY & GENERIC SECTION LAYOUT
+   ========================================================= */
 body {
-  background: #eeecec;
-  color: #040404;
-  line-height: 1.9;
-}
-
-section {
-  padding: 2rem;
-  max-width: 1250px;
-  margin: auto;
-}
-
-h1, h2, h3 {
-  margin-bottom: 0.5rem;
-}
-
-/* ========================================================= SECTION HEADINGS – Uniform style for all sections ========================================================= */
-section h2 {
-  text-align: center;
-  font-size: 2.0rem;
-  font-weight: 700;
-  color: #263b03;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* Optional: make section titles responsive for smaller screens */
-@media (max-width: 768px) {
-  section h2 {
-    font-size: 2rem;
-  }
-}
-
-/* ========================================================= HEADER SECTION ========================================================= */
-header {
-  background-image: url('Image/Sindhu.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: rgb(198, 172, 172);
-  padding: 6rem 1rem;
-  text-align: center;
-  position: relative;
-  height: 50vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.header-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-.header-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: left;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-
-.profile-pic {
-  width: 200px;
-  height: auto;
-  border-radius: 8px;
-  border: 3px solid;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  margin-right: 20px;
-}
-
-/* ========================================================= NAVIGATION BAR ========================================================= */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  background: #2e0202;
-  padding: 1rem;
-}
-
-nav a {
-  color: rgb(250, 187, 187);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ========================================================= CONTACT LINKS ========================================================= */
-.contact-link {
-  color: white;
-  text-decoration: none;
-  font-weight: 1900;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.contact-link:hover {
-  color: #e87007;
-  background-color: rgba(5, 0, 0, 0.3);
-  box-shadow: 0 5px 15px rgba(232, 229, 229, 0.2);
-}
-
-/* ========================================================= ABOUT CARD – separate ========================================================= */
-.about-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-#about h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #012628;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.about-card {
-  max-width: 100%;   /* allow card to shrink */
-  width: 90%;        /* default width on large screens */
-  min-width: 300px;  /* optional: prevent it from being too small */
-  padding: 2rem;
-  border-radius: 12px;
-  border: 4px solid #090a0a;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-  border-color: #161201;
-  background-color: #f8efef;
-}
-
-.about-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #004d40;
+  background: var(--bg-body);
+  color: var(--text-main);
   line-height: 1.7;
 }
 
-.about-card h3 {
-  margin-bottom: 1rem;
-  color: #006064;
+.section {
+  padding: 3rem 1.5rem;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* ========================================================= PROJECT CARDS – fully separate ========================================================= */
-/* Center the PROJECT CARDS themselves — not the text */
-#projects {
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 900;
+}
+
+/* =========================================================
+   STEP 3: TOP BAR (NAME + LINKS)
+   ========================================================= */
+.top-bar {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  backdrop-filter: blur(10px);
+  background: rgba(244, 244, 245, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.top-bar-inner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-weight: 900;
+}
+
+/* name + role area */
+.top-bar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.brand-mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+
+.brand-name {
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1.10rem;
+  font-weight: 900;
+}
+
+.brand-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* top-right links */
+.top-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.top-links a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #ffffff;
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.top-links a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   STEP 4: HERO CONTAINER (ABOUT)
+   ========================================================= */
+.hero {
+  max-width: var(--section-max-width);
+  margin: 2.75rem auto 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+/* title style for greeting inside card */
+.hero-greeting {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+/* =========================================================
+   STEP 5: HERO LEFT COLUMN (TITLE + IMAGE + NAV)
+   ========================================================= */
+.hero-left {
+  padding-top: 0.25rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 750;
+  line-height: 1.22;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.hero-media-block {
+  max-width: 660px;
+}
+
+.hero-photo-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 0.75rem;
+  max-width: 660px;
+}
+
+.hero-photo-card img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* =========================================================
+   STEP 6: HERO RIGHT COLUMN (ABOUT TEXT CARD)
+   ========================================================= */
+.hero-about {
+  background: var(--bg-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 1.9rem 2.1rem;
+}
+
+.hero-about h2 {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.hero-about p {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================================
+   STEP 7: HERO SECTION NAV
+   ========================================================= */
+.section-nav {
+  margin-top: 0.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.section-nav a {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font-weight: 900; 
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.section-nav a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   STEP 8: PROJECTS SECTION (CARDS + IMAGES)
+   ========================================================= */
+#projects .projects-container {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centers cards horizontally */
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
+  gap: 2rem;
 }
 
-/* Individual project cards styling */
 .project-card {
-  background-color: #f5f0e6;
-  border: 4px solid #311501;   /* same border for all */
-  border-radius: 12px;
-  width: 100%;
-  max-width: 1800px;
-  min-height: 350px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  margin: 0 auto 3rem auto;
+  background: var(--bg-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 1.75rem 1.75rem 1.5rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-  border-color: #ffd700;
-  background-color: #fff8e1;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  border-color: var(--accent);
 }
 
-/* Project images container */
-/* ---------------- PROJECT IMAGES ---------------- */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.project-link {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-dark);
+  text-decoration: none;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  border: 1px solid #c7d2fe;
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.project-link:hover {
+  background: var(--accent-dark);
+  color: #eef2ff;
+  transform: translateY(-1px);
+}
+
+.project-overview {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.project-highlights {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 0.9rem;
+  padding-left: 1.1rem;
+}
+
+.project-highlights li {
+  margin-bottom: 0.2rem;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1.5fr));
+  gap: 0.75rem;
+}
+
+.project-images.single-image {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .project-images img,
 .project1-img {
-  max-width: 100%;      /* expand to container width */
-  max-height: 200px;    /* increase max height */
-  height: auto;         /* maintain aspect ratio */
-  width: auto;
-  object-fit: cover;    /* crop nicely without stretching */
-  border-radius: 8px;
-  border: 2px solid #8b4513;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-height: 900px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
   cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .project-images img:hover,
 .project1-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  border-color: #ffd700;
+  transform: scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.25);
 }
 
-/* ---------------- RESPONSIVE ADJUSTMENTS ---------------- */
-@media (max-width: 1024px) {
-  .project-images img,
-  .project1-img {
-    max-width: 90%;
-    max-height: 400px;
-    margin: 1rem auto;
-  }
+/* ===== Special layout for Tableau project (Project 2) ===== */
+.project-card--tableau .project-tableau-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .project-images img,
-  .project1-img {
-    max-width: 95%;
-    max-height: 300px;
-    margin: 1rem auto;
-  }
+.project-card--tableau .project-tableau-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media (max-width: 480px) {
-  .project-images img,
-  .project1-img {
-    max-width: 100%;
-    max-height: 250px;
-    margin: 1rem auto;
-  }
+.project-card--tableau .project-tableau-image .project-images {
+  display: block;
 }
 
-/* The overlay background */
+.project-card--tableau .project-tableau-image img {
+  max-width: 420px;
+  width: 100%;
+  margin-left: auto;
+}
+
+/* =========================================================
+   STEP 9: LIGHTBOX OVERLAY (IMAGE ZOOM)
+   ========================================================= */
 .lightbox-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none; /* hidden by default */
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* The enlarged image */
 .lightbox-overlay img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-  object-fit: contain;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.8);
 }
 
-.lightbox-overlay img:hover {
-  transform: scale(1.05);
-  cursor: zoom-out;
+/* =========================================================
+   STEP 10: WORKSHOPS SECTION (CARDS)
+   ========================================================= */
+#workshops .workshop-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
 }
 
-/* ========================================================= EXPERIENCE SECTION – Text + Single Image Side by Side  ========================================================= */
-#experience {
-  padding: 3rem 1.5rem;
-  background: #ecd3bb;
-  border-radius: 60px;
-}
-
-#experience h2 {
-  color: #006064;
-  font-size: 2.3rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-/* Container for all experience cards */
-.experience-container {
+.workshop-item {
+  background: var(--bg-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 1.75rem 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
+  gap: 1.1rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
-/* Single experience card styling */
-.experience-card {
-  background: #ffffff;
-  border-radius: 19px;
-  padding: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.workshop-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  border-color: var(--accent);
 }
 
-/* Row for text + image */
-.text-image-row {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap; /* allows stacking on smaller screens */
-}
-
-/* Text part */
-.experience-text {
-  flex: 1 1 500px; /* grows/shrinks */
-}
-
-/* Image part */
-.experience-image {
-  flex: 0 0 400px; /* fixed width for image */
-}
-
-.experience-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  object-fit: cover;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .text-image-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .experience-image {
-    flex: 1 1 100%;
-  }
-}
-
-.experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-.experience-card h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.experience-card ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-/* Flex container for text + image */
-.experience-gallery {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* Text area */
-.experience-gallery .text-content {
-  flex: 1 1 400px;
-}
-
-/* Single image area */
-.experience-gallery img {
-  flex: 0 0 400px;
-  max-width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for the single text + image layout */
-.experience-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-}
-
-/* Responsive: stack text above image on small screens */
-@media (max-width: 768px) {
-  .experience-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .experience-gallery img {
-    width: 90%;
-  }
-}
-
-/* =========================================================  EDUCATION SECTION STYLES  ========================================================= */
-
-/* Container for all education cards */
-.education-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-/* Individual education cards */
-.education-card {
-  background-color: #e8d8b9;
-  border-radius: 12px;
-  border: 4px solid #520d03;
-  flex: 1 1 300px;
-  min-width: 300px;
-  max-width: 800px;
-  min-height: 300px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 10px rgba(15, 12, 12, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover effect for education cards */
-.education-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-  border-color: #e8bf57;
-  background-color: #dfcc8b;
-}
-
-/* Card headings */
-.education-card h3 {
-  margin-bottom: 1rem;
-  color: #4a148c;
-}
-
-/* Paragraph text inside cards */
-.education-card p {
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
-  color: #3b2f3b;
-  line-height: 1.5;
-}
-
-/* 📸 Image styles inside each education card */
-.education-card img {
-  width: 90%;
-  max-height: 200px;        /* Keeps image from being too tall */
-  object-fit: cover;        /* Crops and fills area neatly */
-  border-radius: 8px;       /* Matches card’s rounded edges */
-  margin: 0.8rem 0;         /* Adds space above and below */
-  display: block;           /* Prevents inline gaps */
-}
-
-/* Optional: separate image gallery container */
-.education-gallery {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* Unique border colors for each card */
-#edu-card-1 { border-color: #280602; }
-#edu-card-2 { border-color: #3a0303; }
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .education-card {
-    max-width: 90%;
-    padding: 1.2rem;
-  }
-
-  .education-card img {
-    max-height: 100px;
-  }
-}
-/* ========================================================= EDUCATION SECTION – Image Hover Effect = */
-.education-gallery img,
-.education-card img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-gallery img:hover,
-.education-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-}
-/* ========================================================= CERTIFICATIONS & TRAININGS CARDS – side by side ========================================================= */
-.cert-container {
+.workshop-header {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 1.5rem;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
-.cert-card {
-  flex: 1 1 45%;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cert-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 20px rgba(0, 96, 100, 0.25);
+.workshop-item h3 {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.cert-card h3 {
-  text-align: center;
-  font-size: 1.6rem;
-  color: #070707;
-  margin-bottom: 1rem;
-  border-bottom: 3px solid #00acc1;
-  display: inline-block;
-  padding-bottom: 0.3rem;
+.workshop-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  border: 1px solid #c7d2fe;
 }
 
-.cert-card h4 {
-  font-size: 1.2rem;
-  color: #000000;
-  margin-bottom: 0.5rem;
-  text-align: left;
+.workshop-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
 }
 
-.cert-card p {
-  font-size: 0.95rem;
-  color: #000700;
-  margin-bottom: 0.8rem;
+.workshop-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--accent-dark);
+  margin-top: 0.4rem;
+}
+
+.workshop-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.workshop-body li {
+  font-size: 0.9rem;
+  color: var(--text-main);
   line-height: 1.6;
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
 }
 
-.cert-card ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  color: #080000;
+.workshop-body li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 0.05rem;
 }
 
-.cert-card ul li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+.workshop-image {
+  margin-top: 0.25rem;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .cert-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .cert-card {
-    flex: 1 1 100%;
-  }
+.workshop-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-/* ========================================================= CONTACT CARDS – separate ========================================================= */
+.workshop-item:hover .workshop-image img {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   STEP 11: CONTACT SECTION (PILLS)
+   ========================================================= */
+#contact h2 {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.25rem;
   justify-content: center;
 }
+
 .contact-card {
-  background: #ece0e0;
-  border-left: 6px solid #4a148c;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 60px;
-  cursor: pointer;
-  flex: 1 1 300px;
-  min-width: 350px;
-  max-width: 700px;
-  min-height: 350px;
-  transition: all 0.3s ease;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  min-width: 260px;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  border-left-color: #ba68c8;
-  background-color: #ede7f6;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.22);
+  border-color: var(--accent);
 }
 
-.contact-card ul, .contact-card p {
-  margin-top: 0.5rem;
-  padding-left: 1.2rem;
-}
-/* === Training / Workshop Images === */
-.cert-card img {
-  display: block;
-  max-width: 250px;       /* set reasonable width */
-  max-height: 180px;      /* limit height */
-  width: auto;
-  height: auto;
-  margin: 1rem auto;      /* centers the image horizontally with space around */
-  border-radius: 19px;
-  border: 2px solid #8b4513;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.email-card {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
 }
 
-/* Hover effect like project images */
-.cert-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  border-color: #ffd700;
+.linkedin-card {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .cert-card img {
-    max-width: 90%;
-    max-height: auto;
-  }
+.github-card {
+  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
 }
-/* ========================================================= FOOTER ========================================================= */
-footer {
+
+.contact-intro {
   text-align: center;
-  padding: 1rem;
-  background: #383838;
-  color: rgb(221, 200, 200);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: -1rem 0 1.5rem;
 }
 
-/* ========================================================= 📜 RESUME LINK STYLE ========================================================= */
-.Resume-link {
-  color: rgb(255, 251, 251);
+.contact-card a {
   text-decoration: none;
-  font-weight: 500;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
 }
 
-.Resume-link:hover {
-  color: #ffd700;
+.contact-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.contact-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+/* =========================================================
+   STEP 12: FOOTER
+   ========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 1.3rem 1rem 1.6rem;
+  background: #111827;
+  color: #d1d5db;
+  font-size: 0.85rem;
+}
+
+/* optional: small accent on a link inside footer */
+.site-footer a {
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
   text-decoration: underline;
 }
-/* ========================================================= 💌 CONTACT SECTION – Perfectly Sized Compact Cards ========================================================= */
-/* ---------------- CONTACT SECTION ---------------- */
-#contact {
-  text-align: center;
-  padding: 3rem 1.5rem;
-  background: #f9f9f9;
-}
-
-#contact h2 {
-  color: #006064;
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Contact cards container – inline layout */
-#contact .contact-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: nowrap; /* ensures cards stay in one row */
-}
-
-/* Individual contact cards */
-#contact .contact-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1.2rem;  /* slightly smaller padding */
-  border-radius: 25px;
-  background: #ffffff;
-  box-shadow: 0 3px 8px rgba(0, 96, 100, 0.15);
-  font-weight: 500;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 200px;
-  max-width: 300px;
-  height: auto !important;      /* force auto height */
-  min-height: unset !important; /* remove min-height restriction */
-  text-align: center;
-  word-break: break-word;
-}
-
-
-/* Card links */
-#contact .contact-card a {
-  text-decoration: none;
-  color: #004d40;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-}
-
-/* Hover effect */
-#contact .contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 96, 100, 0.25);
-}
-
-/* Gradient backgrounds */
-#contact .email-card {
-  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-  border: 2px solid #80deea;
-}
-#contact .linkedin-card {
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-  border: 2px solid #90caf9;
-}
-#contact .github-card {
-  background: linear-gradient(135deg, #ede7f6, #d1c4e9);
-  border: 2px solid #b39ddb;
-}
-
-/* Responsive – stack cards on small screens */
-@media (max-width: 768px) {
-  #contact .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #contact .contact-card {
-    width: 80%;
-    height: 100px;
-  }
-}
-/* ========================================================= FLEXIBLE DEVICE RESPONSIVENESS ========================================================= */
-
-/* General adjustments for tablets and phones */
-@media (max-width: 1024px) {
-  section {
-    padding: 1.5rem;
-  }
-  header {
-    height: auto;
-    padding: 4rem 1rem;
-  }
-  .header-content {
-    padding: 0.8rem;
-    font-size: 0.95rem;
-  }
-  .profile-pic {
-    width: 150px;
-    margin-right: 10px;
-  }
-}
-
-/* Project images */
-@media (max-width: 768px) {
-  .project-images img,
-  .project1-img {
-    width: 90% !important;
-    height: auto !important;
-    margin: 1rem auto;
-  }
-}
-
-/* About card */
-@media (max-width: 768px) {
-  .about-card {
-    min-width: auto !important;
-    max-width: 95% !important;
-    padding: 1.5rem;
-  }
-}
-
-/* Education cards */
-@media (max-width: 768px) {
-  .education-card {
-    max-width: 95% !important;
-    min-width: auto !important;
-    padding: 1.2rem;
-  }
-  .education-card img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
-
-/* Certification cards */
-@media (max-width: 768px) {
-  .cert-card {
-    flex: 1 1 100% !important;
-    max-width: 95%;
-    padding: 1rem;
-  }
-  .cert-card img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
-
-/* Contact cards */
-@media (max-width: 768px) {
-  #contact .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  #contact .contact-card {
-    width: 80% !important;
-    height: auto !important;
-  }
-}
-
-/* Experience section */
-@media (max-width: 768px) {
-  .text-image-row,
-  .experience-gallery {
-    flex-direction: column !important;
-    align-items: center;
-  }
-  .experience-image img {
-    width: 90% !important;
-    height: auto !important;
-  }
-}
-
-/* Footer text adjustment */
-@media (max-width: 480px) {
-  footer {
-    font-size: 0.9rem;
-    padding: 1rem 0.5rem;
-  }
-}
-
