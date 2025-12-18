@@ -84,6 +84,7 @@ h3 {
   justify-content: space-between;
   gap: 1.5rem;
   font-weight: 900;
+  flex-wrap: wrap;
 }
 
 /* name + role area */
@@ -150,14 +151,20 @@ h3 {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: center;
+}
+
+@media (min-width: 901px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+  }
 }
 
 /* title style for greeting inside card */
 .hero-greeting {
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 900;
   font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.2;
@@ -177,6 +184,7 @@ h3 {
   box-shadow: var(--shadow-soft);
   padding: 0.75rem;
   max-width: 660px;
+  margin-inline: auto;
 }
 
 .hero-photo-card img {
@@ -211,17 +219,17 @@ h3 {
   margin-top: 0.9rem;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 0.5rem;
   border-radius: var(--radius-pill);
   background: #ffffff;
   border: 1px solid rgba(148, 163, 184, 0.5);
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .section-nav a {
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   text-decoration: none;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -230,6 +238,7 @@ h3 {
   border-radius: var(--radius-pill);
   color: var(--text-muted);
   font-weight: 900;
+  flex: 0 0 auto;
   transition: background var(--transition-fast), color var(--transition-fast),
     transform var(--transition-fast);
 }
@@ -244,9 +253,21 @@ h3 {
    STEP 8: PROJECTS SECTION (CARDS + IMAGES)
    ========================================================= */
 #projects .projects-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #projects .projects-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1201px) {
+  #projects .projects-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .project-card {
@@ -271,11 +292,11 @@ h3 {
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .project-card h3 {
   font-size: 1.2rem;
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .project-link {
@@ -317,12 +338,14 @@ h3 {
 
 .project-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1.5fr));
+  grid-template-columns: 1fr;
   gap: 0.75rem;
 }
 
-.project-images.single-image {
-  grid-template-columns: minmax(0, 1fr);
+@media (min-width: 601px) {
+  .project-images {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1.5fr));
+  }
 }
 
 .project-images img,
@@ -343,30 +366,6 @@ h3 {
   transform: scale(1.03);
   border-color: var(--accent);
   box-shadow: 0 12px 25px rgba(15, 23, 42, 0.25);
-}
-
-/* ===== Special layout for Tableau project (Project 2) ===== */
-.project-card--tableau .project-tableau-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.project-card--tableau .project-tableau-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.project-card--tableau .project-tableau-image .project-images {
-  display: block;
-}
-
-.project-card--tableau .project-tableau-image img {
-  max-width: 420px;
-  width: 100%;
-  margin-left: auto;
 }
 
 /* =========================================================
@@ -394,8 +393,20 @@ h3 {
    ========================================================= */
 #workshops .workshop-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #workshops .workshop-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1201px) {
+  #workshops .workshop-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .workshop-item {
@@ -427,7 +438,6 @@ h3 {
 .workshop-item h3 {
   font-size: 1.05rem;
   line-height: 1.4;
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .workshop-badge {
@@ -501,23 +511,27 @@ h3 {
 /* =========================================================
    STEP 11: CONTACT SECTION (PILLS)
    ========================================================= */
-#contact h2 {
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  justify-content: center;
-  font-weight: 1000;
+@media (min-width: 601px) {
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
 }
 
 .contact-card {
+  width: 100%;
+  max-width: 360px;
   border-radius: 999px;
   padding: 0.9rem 1.5rem;
-  min-width: 260px;
-  max-width: 360px;
   display: flex;
   justify-content: center;
   box-shadow: var(--shadow-soft);
@@ -596,10 +610,9 @@ h3 {
 
 /* =========================================================
    STEP 13: RESPONSIVE MEDIA QUERIES
-   Phone → Tablet → Laptop/Desktop
    ========================================================= */
 
-/* Small phones and up (base is already mobile-friendly) */
+/* Small phones and up */
 @media (max-width: 600px) {
   .section {
     padding: 2.2rem 1rem;
@@ -608,11 +621,6 @@ h3 {
   .hero {
     padding: 0 1rem 2.5rem;
     margin-top: 1.5rem;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
   }
 
   .hero-about {
@@ -628,22 +636,10 @@ h3 {
     align-items: flex-start;
   }
 
-  .project-images {
-    grid-template-columns: 1fr;
-  }
-
-  #workshops .workshop-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .section-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-
   .top-bar-inner {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
   }
 
   .top-links {
@@ -651,27 +647,18 @@ h3 {
   }
 
   .contact-card {
-    min-width: 100%;
+    width: 100%;
   }
 }
 
-/* Tablets (portrait & small landscape) */
+/* Tablets */
 @media (min-width: 601px) and (max-width: 900px) {
   .section {
     padding: 2.6rem 1.5rem;
   }
 
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
   .hero-about {
     padding: 1.8rem 1.7rem;
-  }
-
-  #workshops .workshop-layout {
-    grid-template-columns: 1fr;
   }
 
   .project-card--tableau .project-tableau-layout {
@@ -682,15 +669,14 @@ h3 {
     margin-inline: auto;
     max-width: 100%;
   }
+
+  #workshops .workshop-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Larger tablets & small laptops: keep two-column hero, relaxed grids */
+/* Larger tablets & small laptops */
 @media (min-width: 901px) and (max-width: 1200px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: 2.5rem;
-  }
-
   #workshops .workshop-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
