@@ -57,11 +57,10 @@ h3 {
 .section h2 {
   text-align: center;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  font-weight: 900;
 }
 
 /* =========================================================
@@ -103,11 +102,10 @@ h3 {
 }
 
 .brand-name {
-  font-weight: 600;
+  font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 1.10rem;
-  font-weight: 900;
+  font-size: 1.1rem;
 }
 
 .brand-role {
@@ -264,7 +262,7 @@ h3 {
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
   color: var(--text-muted);
-  font-weight: 900; 
+  font-weight: 900;
   transition: background var(--transition-fast), color var(--transition-fast),
     transform var(--transition-fast);
 }
@@ -620,7 +618,6 @@ h3 {
   font-size: 0.85rem;
 }
 
-/* optional: small accent on a link inside footer */
 .site-footer a {
   color: #a5b4fc;
   text-decoration: none;
@@ -628,4 +625,80 @@ h3 {
 
 .site-footer a:hover {
   text-decoration: underline;
+}
+
+/* =========================================================
+   STEP 13: RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+/* Tablet and below: stack hero columns, adjust grids */
+@media (max-width: 900px) {
+  .top-bar-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero {
+    margin-top: 1.5rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-about {
+    padding: 1.6rem 1.5rem;
+  }
+
+  .project-card--tableau .project-tableau-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--tableau .project-tableau-image img {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  #workshops .workshop-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small mobile: tighten padding, single-column images, scrollable nav */
+@media (max-width: 600px) {
+  .section {
+    padding: 2.2rem 1rem;
+  }
+
+  .hero {
+    padding: 0 1rem 2.5rem;
+  }
+
+  .hero-greeting {
+    font-size: 1.6rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .section-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .top-links {
+    justify-content: center;
+  }
+
+  .contact-card {
+    min-width: 100%;
+  }
 }
