@@ -164,35 +164,10 @@ h3 {
 }
 
 /* =========================================================
-   STEP 5: HERO LEFT COLUMN (TITLE + IMAGE + NAV)
+   STEP 5: HERO LEFT COLUMN (IMAGE + NAV)
    ========================================================= */
 .hero-left {
   padding-top: 0.25rem;
-}
-
-.hero-eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.8rem;
-}
-
-.hero-title {
-  font-size: 2.4rem;
-  font-weight: 750;
-  line-height: 1.22;
-  margin-bottom: 0.75rem;
-}
-
-.hero-subtitle {
-  font-size: 0.97rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
-}
-
-.hero-media-block {
-  max-width: 660px;
 }
 
 .hero-photo-card {
@@ -221,14 +196,6 @@ h3 {
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
   padding: 1.9rem 2.1rem;
-}
-
-.hero-about h2 {
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 .hero-about p {
@@ -629,44 +596,10 @@ h3 {
 
 /* =========================================================
    STEP 13: RESPONSIVE MEDIA QUERIES
+   Phone → Tablet → Laptop/Desktop
    ========================================================= */
 
-/* Tablet and below: stack hero columns, adjust grids */
-@media (max-width: 900px) {
-  .top-bar-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero {
-    margin-top: 1.5rem;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .hero-about {
-    padding: 1.6rem 1.5rem;
-  }
-
-  .project-card--tableau .project-tableau-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card--tableau .project-tableau-image img {
-    margin-inline: auto;
-    max-width: 100%;
-  }
-
-  #workshops .workshop-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Small mobile: tighten padding, single-column images, scrollable nav */
+/* Small phones and up (base is already mobile-friendly) */
 @media (max-width: 600px) {
   .section {
     padding: 2.2rem 1rem;
@@ -674,6 +607,16 @@ h3 {
 
   .hero {
     padding: 0 1rem 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .hero-about {
+    padding: 1.6rem 1.5rem;
   }
 
   .hero-greeting {
@@ -689,9 +632,18 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  #workshops .workshop-layout {
+    grid-template-columns: 1fr;
+  }
+
   .section-nav {
     justify-content: flex-start;
     overflow-x: auto;
+  }
+
+  .top-bar-inner {
+    flex-direction: column;
+    align-items: center;
   }
 
   .top-links {
@@ -700,5 +652,46 @@ h3 {
 
   .contact-card {
     min-width: 100%;
+  }
+}
+
+/* Tablets (portrait & small landscape) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .section {
+    padding: 2.6rem 1.5rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-about {
+    padding: 1.8rem 1.7rem;
+  }
+
+  #workshops .workshop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--tableau .project-tableau-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--tableau .project-tableau-image img {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+}
+
+/* Larger tablets & small laptops: keep two-column hero, relaxed grids */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 2.5rem;
+  }
+
+  #workshops .workshop-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
