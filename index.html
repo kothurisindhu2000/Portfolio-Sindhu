@@ -438,24 +438,6 @@
     <p>&copy; SINDHU KOTHURI · Building data-driven software & analytics solutions 💻</p>
   </footer>
 <!-- ========================= LIGHTBOX SCRIPT ========================= -->
-  <script>
-    document.querySelectorAll(".lightbox-img").forEach((img) => {
-      img.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.classList.add("lightbox-overlay");
-        overlay.style.display = "flex";
-
-        const largeImg = document.createElement("img");
-        largeImg.src = img.src;
-
-        overlay.appendChild(largeImg);
-        overlay.addEventListener("click", () => overlay.remove());
-
-        document.body.appendChild(overlay);
-      });
-    });
-  </script>
-<!-- ========================= LIGHTBOX SCRIPT ========================= -->
 <script>
   // Select all images you want to open in lightbox
   document.querySelectorAll(".lightbox-img, #analytics .analytics-img").forEach((img) => {
