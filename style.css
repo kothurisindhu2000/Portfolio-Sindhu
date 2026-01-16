@@ -487,12 +487,18 @@ h3 {
 
 .workshop-image img {
   width: 100%;
+  max-width: 380px;   /* optional: controls width like analytics cards */
   height: auto;
+  max-height: 260px;  /* 👈 limit image height */
   display: block;
   transition: transform 0.3s ease;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: 12px; /* optional for consistency */
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: #f8fafc;
 }
+
 
 .workshop-item:hover .workshop-image img {
   transform: scale(1.03);
@@ -721,10 +727,12 @@ body {
 .project-images img,
 .project1-img {
   width: 100%;
-  height: 100%;
+  border-radius: 10px;
+  max-height: 320px;   /* 👈 controls image height */
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
 
 /* 4. Force stable single-column image grid on phones */
 @media (max-width: 600px) {
@@ -740,3 +748,189 @@ body {
     background: rgba(244, 244, 245, 0.98);
   }
 }
+/* ================= ANALYSIS EXPERIENCE ================= */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.analysis-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;             /* Slightly more padding for better spacing */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;          /* Minimum height for uniform card sizes */
+}
+
+.analysis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.analysis-card h3 {
+  margin-top: 12px;
+  font-size: 1.15rem;        /* Slightly larger heading */
+}
+
+.analysis-card p {
+  font-size: 0.95rem;
+  margin: 10px 0 14px 0;     /* More spacing after paragraph */
+  flex-grow: 1;
+}
+
+.analysis-card ul {
+  padding-left: 18px;
+  font-size: 0.92rem;
+}
+
+.analysis-img {
+  width: 100%;
+  max-height: 280px;         /* Slightly larger image */
+  object-fit: cover;          /* Fill card nicely */
+  border-radius: 12px;
+  background: #f8f8f8;
+  margin-bottom: 12px;
+}
+
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+/* =========================================================
+   ANALYTICS SECTION – ISOLATED IMAGE CONTROL
+   ========================================================= */
+
+#analytics .analytics-image {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.75rem;
+}
+
+#analytics .analytics-img {
+  width: 100%;
+  max-width: 380px;   /* 👈 YOU CONTROL ANALYTICS SIZE HERE */
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+#analytics .analytics-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center Analytics images */
+#analytics .analytics-image {
+  display: flex;
+  justify-content: center; /* center the image horizontally */
+  margin-top: 0.75rem;    /* keep your existing spacing */
+}
+
+
+#analytics .analytics-img {
+  width: 100%;
+  max-width: 280px;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: #f8fafc;
+}
+/* Projects container as a 2-column grid */
+#analytics .projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 2rem; /* Space between cards */
+}
+
+
+/* Ensure images stay proportional */
+#analytics .analytics-img {
+  width: 100%;
+  max-width: 280px;   /* Controls max width of image */
+  max-height: 260px;  /* Controls max height */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+/* Text styling */
+#analytics .analytics-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.10rem;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 900px) {
+  #analytics .projects-container {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+  }
+
+  #analytics .analytics-image {
+    justify-content: center;
+  }
+}
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+/* Make analytics images show pointer on hover */
+#analytics .analytics-img {
+  cursor: pointer; /* 👈 shows hand pointer */
+  transition: transform 0.25s ease; /* optional: smooth hover effect */
+}
+
+#analytics .analytics-img:hover {
+  transform: scale(1.03); /* optional: small zoom effect on hover */
+}
+/* Ensure clickable images show pointer on hover */
+#analytics .analytics-img,
+.project-images img,
+.workshop-image img {
+  cursor: pointer;       /* shows hand pointer */
+  transition: transform 0.25s ease; /* optional smooth hover */
+}
+
+#analytics .analytics-img:hover,
+.project-images img:hover,
+.workshop-image img:hover {
+  transform: scale(1.03); /* optional zoom on hover */
+}
+
