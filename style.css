@@ -11,7 +11,7 @@
   --bg-body: #f4f4f5;
   --bg-surface: #ffffff;
 
-  --accent: #4f46e5;
+  --accent: #db4a11;
   --accent-soft: #eef2ff;
   --accent-dark: #3730a3;
 
@@ -62,6 +62,11 @@ h3 {
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 
 /* =========================================================
    STEP 3: TOP BAR (NAME + LINKS)
@@ -375,19 +380,20 @@ h3 {
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(0,0,0,0.8);
   display: none;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+  z-index: 9999;
 }
 
 .lightbox-overlay img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 16px;
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  object-fit: contain;
 }
+
 
 /* =========================================================
    STEP 10: WORKSHOPS SECTION (CARDS)
