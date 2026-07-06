@@ -8,26 +8,26 @@
 }
 
 :root {
-  --bg-body: #f4f4f5;
-  --bg-surface: #ffffff;
+  --bg-body: #f7f1e8;
+  --bg-surface: transparent;
 
-  --accent: #db4a11;
-  --accent-soft: #eef2ff;
-  --accent-dark: #db4a11;
+  --accent: #111111;
+  --accent-soft: #efe6d8;
+  --accent-dark: #111111;
 
-  --text-main: #0f172a;
-  --text-muted: #4b5563;
+  --text-main: #111111;
+  --text-muted: #5a5a5a;
 
-  --border-subtle: rgba(148, 163, 184, 0.4);
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --border-subtle: rgba(17, 17, 17, 0.15);
+  --shadow-soft: none;
 
-  --radius-card: 18px;
+  --radius-card: 0;
   --radius-pill: 999px;
 
-  --section-max-width: 1100px;
+  --section-max-width: 1200px;
   --transition-fast: 0.25s ease;
 
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 /* =========================================================
@@ -55,12 +55,12 @@ h3 {
 }
 
 .section h2 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
+  text-align: left;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  margin-bottom: 2.5rem;
 }
 a:focus-visible {
   outline: 2px solid var(--accent);
